@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Color de la aplicación -->
+    <meta name="theme-color" content="#000000">
+    <!-- Optimización de la vista móvil -->
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Etiquetas para Apple -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="images/pancho1024.png">
+    <link rel="apple-touch-startup-image" href="images/pancho1024.png">
+    <link rel="manifest" href="manifest.json"> <!-- Agrega esta línea para vincular el manifest -->
+    <title>Currículum de Jorge Alexis Ortega Fierro</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #333; /* Fondo gris oscuro */
+            margin: 0;
+            padding: 0;
+            color: #f4f4f4; /* Texto claro */
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #444; /* Fondo del contenedor */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            color: #fff; /* Texto claro dentro del contenedor */
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #f9f9f9; /* Título en color claro */
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            font-size: 24px;
+            color: #000; /* Color negro para los títulos */
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .personal-info, .education, .experience, .skills {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .personal-info div, .education div, .experience div, .skills div {
+            flex: 1 1 45%;
+            margin: 10px;
+        }
+        .personal-info div strong, .education div strong, .experience div strong {
+            color: #000; /* Color negro para los textos importantes */
+        }
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .skills ul li {
+            background-color: #000; /* Fondo negro para las habilidades */
+            color: #fff;
+            display: inline-block;
+            margin: 5px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        /* Estilos para las imágenes */
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .image-gallery img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado -->
+        <div class="section">
+            <h1>Jorge Alexis Ortega Fierro</h1>
+            <p style="text-align:center;">Desarrollador | Ingeniero en Software | TSU en TI</p>
+            
+            <!-- Galería de imágenes -->
+            <div class="image-gallery">
+                <img src="yomero.jpeg" alt="Imagen 1">
+                <img src="utch.jpeg" alt="Imagen 2">
+            </div>
+        </div>
+
+        <!-- Información personal -->
+        <div class="section personal-info">
+            <div>
+                <strong>Teléfono:</strong> +52 615 396 11 76
+            </div>
+            <div>
+                <strong>Email:</strong> <a href="mailto:a1121150049@utch.edu.mx" style="color:#fff;">a1121150049@utch.edu.mx</a>
+            </div>
+            <div>
+                <strong>Dirección:</strong> Chihuahua, México
+            </div>
+            <div>
+                <strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank" style="color:#fff;">https://www.linkedin.com/in/jorge-alexis-ortega-5a013a27a/</a>
+            </div>
+        </div>
+
+        <!-- Experiencia -->
+        <div class="section experience">
+            <h2>Experiencia Profesional</h2>
+            <div>
+                <strong>Intern</strong> - Autozone (2023 - 2024)
+                <p>Practicante en el equipo de BI Store Ops Dev</p>
+            </div>
+            <div>
+                <strong>Associate Programmer</strong> - Autozone (2024 - Presente)
+                <p>Responsable de desarrollar reportes con herramientas de Business Intelligence para el departamento de General Services</p>
+            </div>
+        </div>
+
+        <!-- Educación -->
+        <div class="section education">
+            <h2>Educación</h2>
+            <div>
+                <strong>TSU en Desarrollo Multiplataforma</strong> - UTCH (2021 - 2023)
+                <strong>Ingeniero en Gestión y Desarrollo de Software</strong> - UTCH (2024 - presente)
+            </div>
+            <div>
+                <strong>Certificación en Seguridad Informática</strong> - CISCO Academy (2022)
+            </div>
+        </div>
+
+        <!-- Habilidades -->
+        <div class="section skills">
+            <h2>Habilidades Técnicas</h2>
+            <ul>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>PHP</li>
+                <li>Android Studio</li>
+                <li>WebFOCUS</li>
+                <li>MySQL</li>
+                <li>Seguridad Informática</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
