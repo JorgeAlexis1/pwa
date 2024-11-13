@@ -13,6 +13,21 @@ var urlsToCache = [
     './images/pancho1024.png'
 ];
 
+// Evento Install: almacena los archivos necesarios en la caché
+self.addEventListener('install', (event) => {
+    console.log('Service Worker instalado');
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+            .then((cache) => {
+                console.log('Caché abierta y archivos almacenados');
+                return cache.addAll(urlsToCache);
+            })
+            .catch((err) => {
+                console.log('Error al abrir la caché', err);
+            })
+    );
+});
+
 // Evento Activate: activa el Service Worker y permite trabajar offline
 self.addEventListener('activate', e => {
     const cacheWhiteList = [CACHE_NAME];
@@ -35,16 +50,16 @@ self.addEventListener('activate', e => {
 });
 
 // Evento Fetch: intercepta las solicitudes de red y responde con recursos de la caché si están disponibles
-self.addEventListener('fetch', e => {
+self.addEventListener('fetch', (e) => {
     e.respondWith(
-        caches.match(e.request)
-            .then(res => {
-                if (res) {
-                    // Devuelve datos desde la caché
-                    return res;
-                }
-                // Si no está en la caché, realiza la solicitud de red
-                return fetch(e.request);
-            })
+        caches.match(e.request).then((res) => {
+            if (res) {
+                return res; // Si el recurso está en caché, devolverlo
+            }
+            return fetch(e.request).catch(() => {
+                // Si la red no está disponible, devolver una página de error
+                return caches.match('./offline.html');
+            });
+        })
     );
 });
